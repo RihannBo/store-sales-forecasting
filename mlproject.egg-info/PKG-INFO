@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: mlproject
+Version: 0.0.1
+Author: ReihanBo
+Author-email: reihaneh.boustani@gmail.com
+Requires-Dist: pandas==2.2.2
+Requires-Dist: numpy==1.26.4
+Requires-Dist: scikit-learn==1.4.2
+Requires-Dist: matplotlib==3.8.4
+Requires-Dist: seaborn==0.13.2
+Requires-Dist: scipy==1.13.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
