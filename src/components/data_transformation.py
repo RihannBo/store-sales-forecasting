@@ -61,8 +61,13 @@ class DataTransformation:
             # rolling std
             df["rstd7"] = group.shift(7).rolling(7).std()
 
-            # drop NaN
-            df = df.dropna()
+            # Keep rows with missing sales (inference rows) and only drop rows that
+            # cannot produce model features because lag/rolling values are missing.
+            required_feature_cols = [
+                "lag7", "lag14", "lag28",
+                "rmean7", "rmean14", "rstd7",
+            ]
+            df = df.dropna(subset=required_feature_cols)
 
             logging.info("Feature engineering completed")
 
